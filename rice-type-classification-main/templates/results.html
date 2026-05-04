@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | GrainPalette</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RICE TYPE CLASSIFICATION</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/details">About</a></li>
+            <li><a href="/details#testimonials">Testimonials</a></li>
+            <li><a href="/details#contact">Contact</a></li>
+            <li><a href="/#predict-section">Predict</a></li>
+        </ul>
+    </nav>
+
+    <section class="section results-block">
+        <h1>Results</h1>
+
+        {% if error %}
+            <p class="error-text">{{ error }}</p>
+        {% else %}
+            <p class="section-text">
+                Based on the uploaded image, the AI model predicts that your rice grain is most likely:
+            </p>
+            <h2 class="prediction">{{ prediction }}</h2>
+            <p class="confidence"><strong>Confidence:</strong> {{ confidence }}%</p>
+
+            {% if image_file %}
+                <img class="preview-image"
+                     src="{{ url_for('static', filename='uploads/' + image_file) }}"
+                     alt="Uploaded rice grain image">
+            {% endif %}
+
+            {% if scores %}
+                <div class="score-table-wrap">
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>Rice Type</th>
+                                <th>Probability</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for class_name, score in scores %}
+                                <tr>
+                                    <td>{{ class_name }}</td>
+                                    <td>{{ score }}%</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="actions">
+            <a class="btn-primary" href="/">Try Another Image</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 GrainPalette | Rice Type Classification System</p>
+    </footer>
+</body>
+</html>

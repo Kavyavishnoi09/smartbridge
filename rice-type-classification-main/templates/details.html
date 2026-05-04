@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details | GrainPalette</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">RICE TYPE CLASSIFICATION</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/details">About</a></li>
+            <li><a href="/details#testimonials">Testimonials</a></li>
+            <li><a href="/details#contact">Contact</a></li>
+            <li><a href="/#predict-section">Predict</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Project Details</h1>
+        <p class="section-text">
+            This project classifies rice grain images into multiple rice types using transfer learning.
+            It demonstrates image preprocessing, augmentation, model training, accuracy evaluation,
+            and deployment through a Flask web application.
+        </p>
+    </section>
+
+    <section class="section light">
+        <h2>Objectives</h2>
+        <ul class="info-list">
+            <li>Preprocess and augment rice grain images.</li>
+            <li>Apply transfer learning on the rice dataset.</li>
+            <li>Train and evaluate a deep learning model.</li>
+            <li>Save the trained model for future prediction.</li>
+            <li>Build a Flask-based web application for deployment.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="testimonials">
+        <h2>Use Cases</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Crop Planning</h3>
+                <p>Farmers can identify rice varieties and adapt irrigation and fertilizer plans.</p>
+            </div>
+            <div class="card">
+                <h3>Extension Services</h3>
+                <p>Researchers can classify rice during field visits and trials.</p>
+            </div>
+            <div class="card">
+                <h3>Education</h3>
+                <p>Students and home growers can learn about rice diversity and image AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light" id="contact">
+        <h2>Contact</h2>
+        <p class="section-text">
+            Project Title: GrainPalette - A Deep Learning Odyssey in Rice Type Classification Through Transfer Learning
+        </p>
+        <p class="section-text">Built with Python, TensorFlow/Keras, and Flask.</p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 GrainPalette | Rice Type Classification System</p>
+    </footer>
+</body>
+</html>
